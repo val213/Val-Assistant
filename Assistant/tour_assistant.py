@@ -9,7 +9,7 @@ from dashscope import Assistants, Messages, Runs, Threads
 from function_utils import *
 
 # 通过环境变量设置
-os.environ['DASHSCOPE_API_KEY'] = 'sk-3916b5e243094a8b90482cce572ca30'
+
 def create_assistant():
     # create assistant with information
     assistant = Assistants.create(
