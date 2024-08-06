@@ -6,10 +6,12 @@ import sys
 from http import HTTPStatus
 
 from dashscope import Assistants, Messages, Runs, Threads
+import dashscope
 from function_utils import *
 
-# 通过环境变量设置
+# 通过文件读取apikey
 
+dashscope.api_key_file_path = 'Assistant\config.json'
 def create_assistant():
     # create assistant with information
     assistant = Assistants.create(
@@ -236,9 +238,9 @@ def send_message(assistant, message='查询杭州天气'):
 
 if __name__ == '__main__':
     assistant = create_assistant()
-    send_message(assistant=assistant, message="丽江天气怎么样？")
+    # send_message(assistant=assistant, message="丽江天气怎么样？")
 
-    # send_message(assistant=assistant,message="年假打算出去玩，有什么地点推荐吗")
+    send_message(assistant=assistant,message="年假打算出去玩，有什么地点推荐吗")
     # send_message(assistant=assistant,message="从北京去丽江怎么出行方便？")
 
     # send_message(assistant=assistant,message="丽江有什么好玩的地方？")
